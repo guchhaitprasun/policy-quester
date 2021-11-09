@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CwAZK4KhkmGcn9cIySl0/WyJMxE1XmEnxoL9IyDTvJCgubFKQdtnqiTIcx3sWopYpr2MHV8GdRsp2io6/XgnOQ==",
+  "success": true,
+  "projectFilePath": "D:\\Personal Documents\\test\\policy-quester\\ServiceAPI\\ServiceAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\prasunguchhait.NAGARRO\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.18\\microsoft.netcore.app.host.win-x64.3.1.18.nupkg.sha512"
+  ],
+  "logs": []
+}

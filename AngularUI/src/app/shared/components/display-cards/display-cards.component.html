@@ -1,0 +1,21 @@
+<div class="productCard">
+    <div class="row">
+        <div class="col-9 pr-0">
+            <strong>{{fistLabel}}</strong>&nbsp;&nbsp; <span class="text-danger">{{dataObj.id}}</span>
+        </div>
+        <div class="col-2 pl-0 pr-0 float-right text-right" *ngIf="isPolicy">
+            <span class="badge badge-warning viedbadge" (click)="viewCard(dataObj.id)">View</span>
+        </div>
+    </div>
+    <div class="row mt-2" *ngIf="isPolicy">
+        <div class="col-12 pr-0" style="font-size: small;">
+            {{secondLabel}} <span class="text-primary">{{getDateString(dataObj.dateofpurchase)}}</span>
+        </div>
+    </div>
+    <div class="row" *ngIf="!isPolicy">
+        <div class="col-12">
+            <span class="text-primary">{{dataObj.clientname}}</span>
+        </div>
+    </div>
+
+</div>

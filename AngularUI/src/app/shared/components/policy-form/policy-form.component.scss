@@ -1,0 +1,15 @@
+.example-full-width {
+    width: 100%;
+  }
+
+   .result-list{
+    display: grid;
+    position: absolute;
+    background-color: white;
+    color: #7b1fa2;
+    border-radius: 10px;
+    width: 200px;
+    max-height: 400px;
+    overflow: auto;
+    z-index: 1000;
+  }

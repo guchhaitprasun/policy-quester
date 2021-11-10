@@ -28,10 +28,23 @@ namespace ServiceAPI.Controllers
         }
 
         // GET: api/Customers/5
-        [HttpGet("{id}")]
+        [HttpGet, Route("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
             var customer = await _context.Customer.FindAsync(id);
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return customer;
+        }
+
+        [HttpGet, Route("searchCustomer/{searchQuery}")]
+        public async Task<ActionResult<IEnumerable<Customer>>> SearchCustomer(string searchQuery)
+        {
+            var customer = await _context.Customer.Where(o => o.Clientname.Contains(searchQuery) || o.Id.ToString().Contains(searchQuery)).Take(50).ToListAsync();
 
             if (customer == null)
             {

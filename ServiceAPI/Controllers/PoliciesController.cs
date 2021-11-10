@@ -24,7 +24,7 @@ namespace ServiceAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Policy>>> GetPolicy()
         {
-            return await _context.Policy.ToListAsync();
+            return await _context.Policy.OrderByDescending(o => o.Id).ToListAsync();
         }
 
         // GET: api/Policies/5
@@ -76,11 +76,11 @@ namespace ServiceAPI.Controllers
         // POST: api/Policies
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
+        [HttpPost, Route("addPolicy")]
         public async Task<ActionResult<Policy>> PostPolicy(Policy policy)
         {
             _context.Policy.Add(policy);
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPolicy", new { id = policy.Id }, policy);
         }

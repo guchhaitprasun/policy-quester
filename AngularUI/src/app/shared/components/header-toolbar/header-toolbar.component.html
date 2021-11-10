@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+    <span> <img src="assets/angular_whiteTransparent.svg" style="width: 34px;" alt="ag logo" /> Policy Quester</span>
+    <div class="ml-3 mt-1 mr-4 example-button-row">
+        <button mat-button (click)="navigateToRoute('policies')">Policies</button>
+        <button mat-button (click)="navigateToRoute('customers')">Customers</button>
+    </div>
+    <app-search-bar></app-search-bar>
+    <span class="example-spacer"></span>
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="accent" class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon">
+        <!-- <mat-icon>add</mat-icon> -->
+        Add
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="addNewPolicy()">
+            <mat-icon>post_add</mat-icon>
+            <span>New Policy</span>
+        </button>
+        <button mat-menu-item (click)="addNewUser()">
+            <mat-icon>
+                supervisor_account</mat-icon>
+            <span>New Customer</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

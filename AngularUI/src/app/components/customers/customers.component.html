@@ -1,0 +1,7 @@
+<div class="m-4 mt-1" *ngFor="let chunk of customerList" style="min-height: 50px;">
+    <div class="row">
+        <div class="col-2 p-2" *ngFor="let customer of chunk; let i = index">
+            <app-display-cards [policy]="customer" [firstLabel]="labels.customerID" [secondLabel]="''" [isPolicy]="false"></app-display-cards>
+        </div>
+    </div>
+</div>

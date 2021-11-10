@@ -60,6 +60,45 @@ namespace ServiceAPI.Controllers
 
             return statusList;
         }
+
+        [HttpGet, Route("searchPolicies/{policyID}")]
+        public async Task<ActionResult<IEnumerable<Policy>>> SearchPolicies(string policyID)
+        {
+            var policyList = await _context.Policy.Where(o => o.Id.ToString().Contains(policyID) || o.Customerid.ToString().Contains(policyID)).ToListAsync();
+
+            if (policyList == null)
+            {
+                return new List<Policy>();
+            }
+
+            return policyList;
+        }
+
+        [HttpGet, Route("getVehicleType")]
+        public async Task<ActionResult<IEnumerable<VehicleSegment>>> GetVehicleType()
+        {
+            var vehicleList = await _context.VehicleSegment.ToListAsync();
+
+            if (vehicleList == null)
+            {
+                return NotFound();
+            }
+
+            return vehicleList;
+        }
+
+        [HttpGet, Route("getFuelType")]
+        public async Task<ActionResult<IEnumerable<FuelSegment>>> GetFuelTypes()
+        {
+            var fuelList = await _context.FuelSegment.ToListAsync();
+
+            if (fuelList == null)
+            {
+                return NotFound();
+            }
+
+            return fuelList;
+        }
     }
 
 

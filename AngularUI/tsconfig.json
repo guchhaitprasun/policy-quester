@@ -14,8 +14,9 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
+    "target": "es2015",
     "module": "es2020",
+    "strictPropertyInitialization": false, 
     "lib": [
       "es2018",
       "dom"

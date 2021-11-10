@@ -1,0 +1,148 @@
+<div class="row">
+    <div class="col-6">
+        <h2>{{headerLabel}}</h2>
+    </div>
+    <div class="col-6 text-right">
+        <button mat-icon-button color="warn" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<form [formGroup]="policyDetailsForm">
+    <div class="row mt-4 ">
+        <div class="col pr-0">
+            <mat-form-field class="example-full-width" color="accent">
+                <mat-label>Search Existing Customer</mat-label>
+                <input matInput [formControl]="name" [errorStateMatcher]="matcher">
+                <mat-error *ngIf="name.hasError('required') || policyDetailsForm.controls.customerid.hasError('required')">
+                    Customer name is <strong>required !</strong> Please select from provided list
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="col-3 pr-0 pl-0 text-right" *ngIf="data && !data.isFormForEdit">
+            <button mat-flat-button color="accent" (click)="addNewCustomer()">
+                Add New Customer
+                <!-- <mat-icon>add</mat-icon> -->
+            </button>
+        </div>
+    </div>
+
+    <div class="result-list ml-1" >
+        <div *ngIf="nameSearchList.length && showList">
+            <button mat-button color="primary" *ngFor="let customer of nameSearchList" style="text-align:left" (click)="AddCustomer(customer)">
+                <div class="row">
+                    <div class="col-2" style="font-weight: bolder;">{{customer.clientname}}</div>
+                </div>
+            </button>
+        </div>
+
+        <div *ngIf="!nameSearchList.length && showList" class="p-4">
+            No User Found
+        </div>
+       
+        <!-- <ul class="ul-list">
+            <li ></li>
+        </ul> -->
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+
+            <mat-form-field class="example-full-width" color="accent">
+                <mat-label>Vehicle Type</mat-label>
+                <mat-select formControlName="vehicletype">
+                    <mat-option *ngFor="let item of vehicleTypeList" [value]="item.id">
+                        {{item.segment}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="policyDetailsForm.controls.vehicletype.hasError('required')">
+                    Vehicle Type is <strong>required</strong>
+                </mat-error>
+                <!-- <mat-error *ngIf="addressDetailForm.controls.country.hasError('required')">
+                    {{'placeOrder.country'| translate}} <strong>{{'placeOrder.isrequired' | translate}}</strong>
+                </mat-error> -->
+            </mat-form-field>
+
+        </div>
+        <div class="col-6">
+            <mat-form-field class="example-full-width" color="accent">
+                <mat-label>Fuel Type</mat-label>
+                <mat-select formControlName="fueltype">
+                    <mat-option *ngFor="let item of fuelTypeList" [value]="item.id">
+                        {{item.segment}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="policyDetailsForm.controls.fueltype.hasError('required')">
+                    Fuel Type is <strong>required</strong>
+                </mat-error>
+                <!-- <mat-error *ngIf="addressDetailForm.controls.country.hasError('required')">
+                    {{'placeOrder.country'| translate}} <strong>{{'placeOrder.isrequired' | translate}}</strong>
+                </mat-error> -->
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <mat-form-field class="example-full-width" color="accent">
+                <mat-label>Premiun Amount</mat-label>
+                <input matInput formControlName="premium">
+                <span matPrefix>$&nbsp;</span>
+                <span matSuffix>.00</span>
+                <mat-error *ngIf="policyDetailsForm.controls.premium.hasError('max')">
+                    Premiun amount should be integer value between 0 and 1000000
+                </mat-error> 
+                <mat-error *ngIf="policyDetailsForm.controls.premium.hasError('required')">
+                    Premium Amount is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="policyDetailsForm.controls.premium.hasError('pattern')">
+                    Enter a valid <strong>Number</strong>
+                </mat-error>
+                
+            </mat-form-field>
+        </div>
+        <div class="col" *ngIf="data && data.isFormForEdit">
+            <mat-form-field class="example-full-width" color="accent" >
+                <mat-label>Date of Purchase</mat-label>
+                <input matInput formControlName="dateofpurchase" [disabled]="true">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-checkbox color="accent" formControlName="bodilyinjuryliability" class="example-margin">Bodily Injury
+                Liability</mat-checkbox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-checkbox color="accent" formControlName="personinjuryprotection" class="example-margin">Person Injury
+                Protection</mat-checkbox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-checkbox color="accent" formControlName="propertydamageliability" class="example-margin">Property
+                Damage liability</mat-checkbox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-checkbox color="accent" formControlName="collision" class="example-margin">Collision</mat-checkbox>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-checkbox color="accent" formControlName="comprehensive" class="example-margin">Comprehensive
+            </mat-checkbox>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-12 text-right">
+        <button mat-flat-button color="primary" (click)="savePolicy()" [disabled]="name.invalid || policyDetailsForm.invalid">
+            {{data && data.isFormForEdit ? 'Update Policy' : 'Add New Policy'}}
+            <!-- <mat-icon>add</mat-icon> -->
+        </button>
+    </div>
+</div>

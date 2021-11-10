@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Policy Detials</h2>
+    </div>
+    <div class="col-6 text-right">
+        <button mat-icon-button color="warn" (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Policy ID</strong></div>
+    <div class="col-5">{{policyDetials.id}}</div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Date of Purchase</strong></div>
+    <div class="col-5">{{policyDetials.dateofpurchase}}</div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Vehicle Type</strong></div>
+    <div class="col-5">{{policyDetials.vehicletype}}</div>
+
+</div>
+<div class="row">
+    <div class="col-5"><strong>Fuel Type</strong></div>
+    <div class="col-5">{{policyDetials.fueltype}}</div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Customer Name</strong></div>
+    <div class="col-5">{{policyDetials.customerid}}</div>
+
+</div>
+<div class="row">
+    <div class="col-5"><strong>Premium Amount</strong></div>
+    <div class="col-5">{{policyDetials.premium}}</div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Body Injury Liability</strong></div>
+    <div class="col-5">{{policyDetials.bodilyinjuryliability ? "Yes" : "No"}}</div>
+
+</div>
+<div class="row">
+    <div class="col-5"><strong>Personal Injury Protection</strong></div>
+    <div class="col-5">{{policyDetials.personinjuryprotection ? "Yes" : "No"}}</div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Property Damage Liability</strong></div>
+    <div class="col-5">{{policyDetials.propertydamageliability ? "Yes" : "No"}}</div>
+
+</div>
+<div class="row">
+    <div class="col-5"><strong>Collision</strong></div>
+    <div class="col-5">{{policyDetials.collision ?  "Yes" : "No"}}</div>
+</div>
+<div class="row">
+    <div class="col-5"><strong>Comprehensive</strong></div>
+    <div class="col-5">{{policyDetials.comprehensive ? "Yes" : "No"}}</div>
+</div>
+
+<div class="row">
+    <div class="col-6"></div>
+    <div class="col-6 text-right">
+        <button mat-flat-button color="primary" (click)="editDetails(policyDetials)">
+            Edit
+        </button>&nbsp;&nbsp;
+        <button mat-flat-button color="warn">
+            Delete
+        </button>
+    </div>
+</div>

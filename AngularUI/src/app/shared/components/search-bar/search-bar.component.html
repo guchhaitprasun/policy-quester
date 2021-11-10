@@ -1,0 +1,14 @@
+<div>
+    <input type="text" class="custom-search-input" placeholder="Search" [formControl]="queryField" (focusout)="clearSearch()"/>
+</div>
+<div class="result-list mt-2 ml-1" *ngIf="results.length && showResult">
+    <button mat-button color="primary" *ngFor="let policy of results" style="text-align:left" (click)="getDetails(policy.id)">
+        <div class="row">
+            <div class="col-2" style="font-weight: bolder;">Policy ID : {{policy.id}} </div>
+            <div class="col-4">(Customer ID {{policy.customerid}})</div>
+        </div>
+    </button>
+    <!-- <ul class="ul-list">
+        <li ></li>
+    </ul> -->
+</div>

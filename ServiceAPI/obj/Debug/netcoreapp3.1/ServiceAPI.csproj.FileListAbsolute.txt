@@ -1,8 +1,3 @@
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.AssemblyReference.cache
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfoInputs.cache
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfo.cs
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.CoreCompileInputs.cache
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\ServiceAPI.exe
@@ -125,6 +120,11 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\run
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.AssemblyReference.cache
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfoInputs.cache
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfo.cs
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.CoreCompileInputs.cache
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\staticwebassets\ServiceAPI.StaticWebAssets.Manifest.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\staticwebassets\ServiceAPI.StaticWebAssets.xml
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\scopedcss\bundle\ServiceAPI.styles.css

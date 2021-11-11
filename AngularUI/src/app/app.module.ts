@@ -8,19 +8,23 @@ import { PoliciesComponent } from './components/policies/policies.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsComponent } from './components/charts/charts.component';
+import { ChartModule } from 'angular-highcharts'
 
 @NgModule({
   declarations: [
     AppComponent,
     PoliciesComponent,
-    CustomersComponent
+    CustomersComponent,
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
+    ChartModule, 
     AppRoutingModule,
     BrowserAnimationsModule, 
     SharedModule, 
-    HttpClientModule
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

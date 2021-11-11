@@ -4,12 +4,19 @@ class APIUrls {
     commonAPI = {
         search: this.baseURL+'/api/common/searchPolicies/', 
         getFuelTypes: this.baseURL+'/api/common/getFuelType', 
-        getVehicleType: this.baseURL+'/api/common/getVehicleType'
+        getRegions: this.baseURL+'/api/common/getRegion',
+        getVehicleType: this.baseURL+'/api/common/getVehicleType',
+        getChartData: this.baseURL+'/api/common/GetChartData/', 
+        getCustomerName: this.baseURL +'/api/common/GetCustomerName/', 
+        getFuelSegment: this.baseURL +'/api/common/GetFuelSegment/', 
+        getVehicleSegment: this.baseURL +'/api/common/GetVehicleSegment/'
     }
 
     policiesAPI = {
         getAllPolicies : this.baseURL+'/api/policies', 
-        addNewPolicy: this.baseURL+'/api/policies/addPolicy'
+        addNewPolicy: this.baseURL+'/api/policies/addPolicy',
+        updateExistingPolicy: this.baseURL+'/api/policies/updatePolicy/',
+        deletePolicy: this.baseURL+'/api/policies/removePolicy/'
     }
 
     customerAPI = {

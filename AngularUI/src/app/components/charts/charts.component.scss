@@ -1,0 +1,16 @@
+
+.container {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 100%));
+    grid-gap: 20px;
+    place-content: center;
+    margin-top: 8vh;
+  }
+
+  .width-full{
+      width: 100%;
+  }
+  
+  
+  

@@ -1,4 +1,4 @@
-<div class="m-4 mt-1" *ngFor="let chunk of policyList" style="min-height: 50px;">
+<div class="ml-4 mr-4 mt-1" *ngFor="let chunk of policyList" style="min-height: 50px;">
     <div class="row">
         <div class="col-2 p-2" *ngFor="let policy of chunk; let i = index">
             <app-display-cards [policy]="policy" [firstLabel]="labels.policyID" [secondLabel]="labels.purchasedOn" [isPolicy]="true"></app-display-cards>

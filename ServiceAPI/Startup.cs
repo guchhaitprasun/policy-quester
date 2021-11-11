@@ -36,6 +36,7 @@ namespace ServiceAPI
                 });
             });
 
+            services.AddMvc();
             services.AddControllers();
 
             services.AddDbContext<PolicyQuester2021Context>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -50,6 +51,7 @@ namespace ServiceAPI
             }
 
             app.UseRouting();
+            app.UseCors("AllowAllOrigins");
 
             app.UseAuthorization();
 

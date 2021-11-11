@@ -99,6 +99,56 @@ namespace ServiceAPI.Controllers
 
             return fuelList;
         }
+
+        [HttpGet, Route("GetChartData/{id}")]
+        public IList<int> GetChartData(int id)
+        {
+            List<int> monthlySales = new List<int>();
+            for(int i=1; i<=12; i++)
+            {
+                monthlySales.Add(getPolicyPurchasedByMonth(i, id));
+            }
+
+            return monthlySales;
+        }
+
+
+        [HttpGet, Route("GetCustomerName/{id}")]
+        public ActionResult<string> GetCustomerName(int id)
+        {
+            var clientName = _context.Customer.FirstOrDefault(o => o.Id == id).Clientname;
+            return Ok(new { clientName });
+        }
+
+
+        [HttpGet, Route("GetFuelSegment/{id}")]
+        public ActionResult<string> GetFuelSegment(int id)
+        {
+            var segment = _context.FuelSegment.FirstOrDefault(o => o.Id == id).Segment;
+            return Ok(new { segment });
+        }
+
+        [HttpGet, Route("GetVehicleSegment/{id}")]
+        public ActionResult<string> GetVehicleSegment(int id)
+        {
+            var segment = _context.VehicleSegment.FirstOrDefault(o => o.Id == id).Segment;
+            return Ok(new { segment });
+        }
+
+        private int getPolicyPurchasedByMonth(int month, int region)
+        {
+            var result = _context.Policy
+                .Include(o => o.Customer)
+                .Where(x => x.Dateofpurchase.Value.Month == month)
+                .ToList();
+
+            if(region != 0)
+            {
+                result = result.Where(o => o.Customer.Region == region).ToList();
+            }
+
+            return result.Count;
+        }
     }
 
 

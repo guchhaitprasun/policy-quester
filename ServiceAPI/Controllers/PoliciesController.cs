@@ -44,7 +44,7 @@ namespace ServiceAPI.Controllers
         // PUT: api/Policies/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
+        [HttpPut, Route("updatePolicy/{id}")]
         public async Task<IActionResult> PutPolicy(int id, Policy policy)
         {
             if (id != policy.Id)
@@ -79,14 +79,15 @@ namespace ServiceAPI.Controllers
         [HttpPost, Route("addPolicy")]
         public async Task<ActionResult<Policy>> PostPolicy(Policy policy)
         {
+            policy.Dateofpurchase = DateTime.Now;
             _context.Policy.Add(policy);
-            //await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetPolicy", new { id = policy.Id }, policy);
         }
 
         // DELETE: api/Policies/5
-        [HttpDelete("{id}")]
+        [HttpDelete, Route("removePolicy/{id}")]
         public async Task<ActionResult<Policy>> DeletePolicy(int id)
         {
             var policy = await _context.Policy.FindAsync(id);
@@ -104,6 +105,12 @@ namespace ServiceAPI.Controllers
         private bool PolicyExists(int id)
         {
             return _context.Policy.Any(e => e.Id == id);
+        }
+
+        private DateTime getExistingPolicyDatetime(int policyID)
+        {
+            Policy policy =  _context.Policy.FirstOrDefault(o => o.Id == policyID);
+            return policy.Dateofpurchase.HasValue ? policy.Dateofpurchase.Value : new DateTime();
         }
     }
 }

@@ -120,7 +120,6 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\run
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.AssemblyReference.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfoInputs.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfo.cs
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.CoreCompileInputs.cache
@@ -133,3 +132,4 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\Ser
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.pdb
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.genruntimeconfig.cache
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.AssemblyReference.cache

@@ -1,5 +1,5 @@
 <div>
-    <input type="text" class="custom-search-input" placeholder="Search" [formControl]="queryField" (focusout)="clearSearch()"/>
+    <input type="text" class="custom-search-input" placeholder="Search Policies" [formControl]="queryField" (focusout)="clearSearch()"/>
 </div>
 <div class="result-list mt-2 ml-1" *ngIf="results.length && showResult">
     <button mat-button color="primary" *ngFor="let policy of results" style="text-align:left" (click)="getDetails(policy.id)">

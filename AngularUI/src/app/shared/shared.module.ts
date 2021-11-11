@@ -15,7 +15,10 @@ import { PolicyDetailComponent } from './components/policy-detail/policy-detail.
 import { MatDialogModule } from '@angular/material/dialog';
 import { PolicyFormComponent } from './components/policy-form/policy-form.component'
 import { MatSelectModule} from '@angular/material/select'
-import { MatCheckboxModule} from '@angular/material/checkbox'
+import { MatCheckboxModule} from '@angular/material/checkbox';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component'
+import { MatTableModule } from '@angular/material/table'
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 
 
@@ -26,7 +29,8 @@ import { MatCheckboxModule} from '@angular/material/checkbox'
     SearchBarComponent,
     DisplayCardsComponent,
     PolicyDetailComponent,
-    PolicyFormComponent
+    PolicyFormComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     CommonModule, 
@@ -40,7 +44,9 @@ import { MatCheckboxModule} from '@angular/material/checkbox'
     MatInputModule, 
     MatDialogModule, 
     MatSelectModule, 
-    MatCheckboxModule
+    MatCheckboxModule, 
+    MatTableModule, 
+    MatPaginatorModule
   ], 
   exports: [
     HeaderToolbarComponent, 
@@ -56,7 +62,9 @@ import { MatCheckboxModule} from '@angular/material/checkbox'
     MatInputModule, 
     MatDialogModule, 
     MatSelectModule, 
-    MatCheckboxModule
+    MatCheckboxModule, 
+    MatTableModule, 
+    MatPaginatorModule
   ]
 })
 export class SharedModule { }

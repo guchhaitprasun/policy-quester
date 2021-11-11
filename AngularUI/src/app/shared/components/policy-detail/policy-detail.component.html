@@ -14,20 +14,20 @@
 </div>
 <div class="row">
     <div class="col-5"><strong>Date of Purchase</strong></div>
-    <div class="col-5">{{policyDetials.dateofpurchase}}</div>
+    <div class="col-5">{{getDateTimeInFormat(policyDetials.dateofpurchase)}}</div>
 </div>
 <div class="row">
     <div class="col-5"><strong>Vehicle Type</strong></div>
-    <div class="col-5">{{policyDetials.vehicletype}}</div>
+    <div class="col-5">{{vehicleType}}</div>
 
 </div>
 <div class="row">
     <div class="col-5"><strong>Fuel Type</strong></div>
-    <div class="col-5">{{policyDetials.fueltype}}</div>
+    <div class="col-5">{{fuelType}}</div>
 </div>
 <div class="row">
     <div class="col-5"><strong>Customer Name</strong></div>
-    <div class="col-5">{{policyDetials.customerid}}</div>
+    <div class="col-5">{{customerName}}</div>
 
 </div>
 <div class="row">
@@ -63,7 +63,7 @@
         <button mat-flat-button color="primary" (click)="editDetails(policyDetials)">
             Edit
         </button>&nbsp;&nbsp;
-        <button mat-flat-button color="warn">
+        <button mat-flat-button color="warn" (click)="deletePolicy(policyDetials)">
             Delete
         </button>
     </div>

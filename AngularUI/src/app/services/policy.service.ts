@@ -10,13 +10,21 @@ export class PolicyService {
 
   constructor(private _http: HttpClient) { }
 
-  private headers = new HttpHeaders().set('Content-Type','application/json');
+  private headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-  getAllPolicies(){
+  getAllPolicies() {
     return this._http.get(appConstants.APIUrls.policiesAPI.getAllPolicies)
   }
 
-  addNewPolicy(object: any){
-    return this._http.post(appConstants.APIUrls.policiesAPI.addNewPolicy, JSON.stringify(object), {headers:this.headers})
+  addNewPolicy(object: any) {
+    return this._http.post(appConstants.APIUrls.policiesAPI.addNewPolicy, object)
+  }
+
+  updateExistingPolicy(object: any, policyId: number) {
+    return this._http.put(appConstants.APIUrls.policiesAPI.updateExistingPolicy + policyId, object);
+  }
+
+  deletePolicy(policyId: number) {
+    return this._http.delete(appConstants.APIUrls.policiesAPI.deletePolicy + policyId);
   }
 }

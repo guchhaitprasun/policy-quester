@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="bar" [chart]="barChart"></div>
+    <div class="row">
+        <div class="col-10">
+            <mat-form-field appearance="outline" class="width-full" color="accent">
+                <mat-label>Select Region of Choice</mat-label>
+                <mat-select #region>
+                    <mat-option *ngFor="let region of regions" [value]="region.id">
+                        {{region.regionname}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-1 p-0 mt-1 text-right">
+            <button mat-raised-button color="accent" (click)="refreshChart(region)" style="width: 185%; height: 65%;">
+                <mat-icon>sync</mat-icon> Refresh Chart 
+            </button>
+        </div>
+    </div>
+</div>

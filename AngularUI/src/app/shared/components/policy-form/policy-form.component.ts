@@ -7,6 +7,7 @@ import { CustomerService } from 'src/app/services/customer.service';
 import { FormErrorStateMacher } from '../../classes/FormErrorStateMatcher';
 import { PolicyDTO } from '../../classes/PolicyDTO';
 import { PolicyService } from 'src/app/services/policy.service';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-policy-form',
@@ -45,7 +46,7 @@ export class PolicyFormComponent implements OnInit {
 
   initForm(){
     return this.policyDetailsForm = this._formBuilder.group({
-      id:[''], 
+      id:[0], 
       vehicletype: [null, [Validators.required]], 
       fueltype: [null, [Validators.required]], 
       premium: [null, [Validators.required, Validators.max(1000000), Validators.min(0), Validators.pattern(/^[0-9]*$/)]], 
@@ -55,18 +56,19 @@ export class PolicyFormComponent implements OnInit {
       collision: [false],
       comprehensive: [false],
       customerid: [null, [Validators.required]],
-      dateofpurchase: {value:'', disabled: true}
+      dateofpurchase: [''], 
+      dateString: ['']
     })
   }
 
   patchForEdit(){
     if(this.data && this.data.isFormForEdit){
-      let date = new Date(this.data.policy.dateofpurchase)
       this.policyDetailsForm.patchValue(this.data.policy)
       this.policyDetailsForm.patchValue({
-        dateofpurchase: date.toDateString()
+        dateString: new Date(this.data.policy.dateofpurchase).toDateString()
       })
       this.name.disable()
+      this.policyDetailsForm.controls.dateString.disable()
       this._customerServic.getCustomer(this.data.policy.customerid).subscribe((res: any) => {
         if(res){
           this.name.patchValue(res['clientname'], {onlySelf: true, emitEvent: false})
@@ -120,32 +122,45 @@ export class PolicyFormComponent implements OnInit {
   }
 
   savePolicy(){
-    let policy = {
-      "id": 12345,
-      "dateofpurchase": "2018-01-16T00:00:00",
-      "customerid": 400,
-      "vehicletype": 2,
-      "fueltype": 2,
-      "premium": 958,
-      "bodilyinjuryliability": false,
-      "personinjuryprotection": false,
-      "propertydamageliability": false,
-      "collision": true,
-      "comprehensive": true,
-      "customer": null,
-      "fueltypeNavigation": null
-  }
     let formData = this.policyDetailsForm.value
-    console.log(formData, policy);
-    
-
+    formData.premium = +formData.premium
     if(this.data && this.data.isFormForEdit){
-      
+      formData.dateofpurchase = this.policyDetailsForm.controls.dateofpurchase.value
+      const dialofRef = this._dialog.open(ConfirmationDialogComponent, {
+        width: '300px', 
+        data: {
+          message: 'Are you sure to Update the policy Details'
+        }
+      })
+
+      dialofRef.afterClosed().subscribe(o => {
+        if(o){
+          this._policyService.updateExistingPolicy(formData, formData.id).subscribe(res => {
+            this._commonService.setPolicyGrid(true);
+            this.dialogRef.close(1)
+          })
+        }
+      })
+
     }else{
-      this._policyService.addNewPolicy(policy).subscribe(res => {
-        console.log(res);
+      formData.dateofpurchase = null
+      const dialofRef = this._dialog.open(ConfirmationDialogComponent, {
+        width: '300px', 
+        data: {
+          message: 'Are you sure to prceed with the new policy registration'
+        }
+      })
+
+      dialofRef.afterClosed().subscribe(o => {
+        if(o){
+          this._policyService.addNewPolicy(formData).subscribe(res => {
+            if(res){
+              this._commonService.setPolicyGrid(true);
+              this.dialogRef.close(1);
+            }
+          })
+        }
       })
     }
   }
-
 }

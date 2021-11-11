@@ -22,9 +22,38 @@ namespace ServiceAPI.Controllers
 
         // GET: api/Customers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomer()
+        public async Task<ActionResult<IEnumerable<Object>>> GetCustomer()
         {
-            return await _context.Customer.ToListAsync();
+            try
+            {
+                var data = await _context.Customer
+               .Include(o => o.GenderNavigation)
+               .Include(o => o.IncomegroupNavigation)
+               .Include(o => o.MaritialstatusNavigation)
+               .Include(o => o.RegionNavigation).ToListAsync();
+
+                var returnResponse = data.Select(o => new
+                {
+                    o.Clientname
+                    ,
+                    o.Emailaddress
+                    ,
+                    o.GenderNavigation.Gendername
+                    ,
+                    o.IncomegroupNavigation.Incomerange
+                    ,
+                    o.MaritialstatusNavigation.Statusname
+                    ,
+                    o.RegionNavigation.Regionname
+                }).ToList();
+               
+                return returnResponse;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // GET: api/Customers/5

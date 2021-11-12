@@ -1,0 +1,107 @@
+CREATE TABLE [Gender] (ID INT PRIMARY KEY IDENTITY (2, 1), GENDERNAME VARCHAR(255), ISACTIVE BIT)
+INSERT INTO [Gender] (GENDERNAME, ISACTIVE)
+VALUES ('MALE', 1), ('FEMALE', 1), ('OTHER', 1), ('Not Disclosed', 1)
+
+CREATE TABLE [MaritialStatus] (ID INT PRIMARY KEY IDENTITY (2, 1), STATUSNAME VARCHAR(255), ISACTIVE BIT)
+INSERT INTO [MaritialStatus] (STATUSNAME, ISACTIVE)
+VALUES ('MARRINED', 1), ('WIDOWED', 1), ('SEPERATED', 1), ('DIVORCED', 1), ('SINGLE', 1)
+
+CREATE TABLE [Region] (ID INT PRIMARY KEY IDENTITY (2, 1), REGIONNAME VARCHAR(255), ISACTIVE BIT)
+INSERT INTO [Region] (REGIONNAME, ISACTIVE)
+VALUES ('NORTH', 1),('EAST', 1), ('WEST', 1), ('SOUTH', 1)
+
+CREATE TABLE [IncomeGroup] (ID INT PRIMARY KEY IDENTITY (2, 1), INCOMERANGE VARCHAR(255), ISACTIVE BIT)
+INSERT INTO [IncomeGroup] (INCOMERANGE, ISACTIVE)
+VALUES (N'$0-$25K', 1), (N'$25-$70K', 1), ('Above $70K', 1)
+
+CREATE TABLE [VehicleSegment] (ID INT PRIMARY KEY IDENTITY (2, 1), SEGMENT VARCHAR(255), ISACTIVE BIT)
+INSERT INTO [VehicleSegment] (SEGMENT, ISACTIVE)
+VALUES ('A', 1),('B', 1),('C', 1)
+
+CREATE TABLE [FuelSegment] (ID INT PRIMARY KEY IDENTITY (2, 1), SEGMENT VARCHAR(255), ISACTIVE BIT)
+INSERT INTO [FuelSegment] (SEGMENT, ISACTIVE)
+VALUES ('CNG', 1),('PETROL', 1),('DIESEL', 1)
+
+CREATE TABLE [Customer] (ID INT PRIMARY KEY IDENTITY (400, 1)
+, CLIENTNAME NVARCHAR(100)
+, EMAILADDRESS NVARCHAR(100)
+, GENDER INT FOREIGN KEY REFERENCES Gender(ID)
+, MARITIALSTATUS INT FOREIGN KEY REFERENCES  MaritialStatus (ID)
+, REGION INT FOREIGN KEY REFERENCES REGION(ID)
+, INCOMEGROUP INT FOREIGN KEY REFERENCES IncomeGroup(ID)
+, ISACTIVE BIT 
+) 
+
+CREATE TABLE [Policy] (ID INT PRIMARY KEY IDENTITY (1, 1)
+, DATEOFPURCHASE DATE
+, CUSTOMERID INT FOREIGN KEY REFERENCES CUSTOMER(ID)
+, VEHICLETYPE INT FOREIGN KEY REFERENCES VEHICLESEGMENT(ID)
+, FUELTYPE INT FOREIGN KEY REFERENCES FUELSEGMENT(ID)
+, PREMIUM DECIMAL(10, 2)
+, BODILYINJURYLIABILITY BIT
+, PERSONINJURYPROTECTION BIT
+, PROPERTYDAMAGELIABILITY BIT
+, COLLISION BIT
+, COMPREHENSIVE BIT
+)
+
+SELECT * FROM [MaritialStatus]
+SELECT * FROM [Gender]
+SELECT * FROM [Region]
+SELECT * FROM [IncomeGroup]
+SELECT * FROM [Customer]
+SELECT * FROM ['ProvidedDataSet'] ORDER BY POLICY_ID ASC
+
+SELECT * FROM Policy 
+
+
+
+--USE AdventureWorks2019
+--GO 
+
+
+--SELECT distinct p.FirstName + ' '+ p.LastName as fullname
+--, LastName+'.'+FirstName+'@policyquester.org' as emailaddress
+--INTO #TEMPtABLE
+--FROM Person.Person P LEFT JOIN HumanResources.Employee E ON P.BusinessEntityID = E.BusinessEntityID
+
+--select distinct FirstName from Person.Person
+
+--name EMAIL GENDER MARIRIL STATUS REGION INCOMGROUP ISACTIVE 
+
+
+
+--select PDS.Customer_id
+--, C.CLIENTNAME
+--, G.ID as GENDERID
+--, IG.ID as INCOMERANGEID
+--, R.ID as REGIONID
+--, PDS.Customer_Marital_status 
+
+--INTO #TEMPt
+
+--from ['ProvidedDataSet'] PDS 
+--left join Customer C on pds.Customer_id = c.ID
+--inner join Gender G on PDS.Customer_Gender = g.GENDERNAME
+--inner JOIN IncomeGroup IG ON IG.INCOMERANGE = pds.[Customer_Income group]
+--inner join Region r on r.REGIONNAME = pds.Customer_Region 
+
+ALTER  TABLE ['ProvidedDataSet']
+ADD  dateofpurchase date
+
+UPDATE ['ProvidedDataSet']
+SET dateofpurchase = convert(datetime, p.[DATE OF PURCHASE], 101)
+FROM ['ProvidedDataSet'] p 
+
+SELECT POLICY_id, [dateofpurchase], CUSTOMER_ID, VEHICLESEGMENTID, FUELID, PREMIUM, [bodily injury liability], [ personal injury protection], [ property damage liability],  [ collision],  [ comprehensive] FROM ['ProvidedDataSet']
+SELECT * FROM Policy 
+
+SET IDENTITY_INSERT [policy] ON 
+insert into [policy] (ID, DATEOFPURCHASE, CUSTOMERID, VEHICLETYPE, FUELTYPE, PREMIUM, BODILYINJURYLIABILITY, PERSONINJURYPROTECTION, PROPERTYDAMAGELIABILITY, COLLISION, COMPREHENSIVE)
+SELECT POLICY_id, [dateofpurchase], CUSTOMER_ID, VEHICLESEGMENTID, FUELID, PREMIUM, [bodily injury liability], [ personal injury protection], [ property damage liability],  [ collision],  [ comprehensive] FROM ['ProvidedDataSet'] order by POLICY_id asc
+
+SET IDENTITY_INSERT [policy] Off 
+
+--drop table [policy]
+
+

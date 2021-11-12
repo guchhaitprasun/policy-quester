@@ -39,6 +39,7 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Mic
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -49,6 +50,9 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Mic
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
@@ -120,9 +124,11 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\run
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.AssemblyReference.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfoInputs.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.AssemblyInfo.cs
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.CoreCompileInputs.cache
+D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\staticwebassets\ServiceAPI.StaticWebAssets.Manifest.cache
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\staticwebassets\ServiceAPI.StaticWebAssets.xml
@@ -132,4 +138,3 @@ D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\Ser
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.dll
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.pdb
 D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.genruntimeconfig.cache
-D:\Personal Documents\test\policy-quester\ServiceAPI\obj\Debug\netcoreapp3.1\ServiceAPI.csproj.AssemblyReference.cache
